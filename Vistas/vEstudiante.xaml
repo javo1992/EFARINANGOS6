@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EFARINANGOS6.Vistas.vEstudiante"
+             Title="vEstudiante">
+    <VerticalStackLayout Padding="10" Margin="20">
+        <Label 
+            Text="CONSUMO DE REST API"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <StackLayout>
+            <Grid BackgroundColor="LightGray">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Código" Grid.Row="0" Grid.Column="0"></Label>
+                <Label Text="Nombre" Grid.Row="0" Grid.Column="1"></Label>
+                <Label Text="Apellido" Grid.Row="0" Grid.Column="2"></Label>
+                <Label Text="Edad" Grid.Row="0" Grid.Column="3"></Label>
+            </Grid>
+
+            <ListView x:Name="listEstudiante" BackgroundColor="Aqua">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                        <ColumnDefinition></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label x:Name="lblCodigo" Text="{Binding codigo}" Grid.Row="0" Grid.Column="0"></Label>
+                                    <Label x:Name="lblNombre" Text="{Binding nombre}" Grid.Row="0" Grid.Column="1"></Label>
+                                    <Label x:Name="lblApellido" Text="{Binding apellido}" Grid.Row="0" Grid.Column="2" ></Label>
+                                    <Label x:Name="lblEdad" Text="{Binding edad}" Grid.Row="0" Grid.Column="3"></Label>
+
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>
