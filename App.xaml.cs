@@ -6,7 +6,8 @@
         {
             InitializeComponent();
 
-            MainPage = new Vistas.vEstudiante();
+            MainPage = new NavigationPage(new Vistas.vEstudiante());
+            //comentario
         }
     }
 }

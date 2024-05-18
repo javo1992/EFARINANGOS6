@@ -23,4 +23,16 @@ public partial class vEstudiante : ContentPage
 		est = new ObservableCollection<Estudiante>(mostra);
 		listEstudiante.ItemsSource = est;
 	}
+
+    private void btnAgregar_Clicked(object sender, EventArgs e)
+    {
+		Navigation.PushAsync(new Vistas.vAgregar());
+    }
+
+    private void listEstudiante_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+    {
+		var objestudiante = (Estudiante)e.SelectedItem;
+		Navigation.PushAsync(new ActEliminar(objestudiante));
+
+    }
 }
